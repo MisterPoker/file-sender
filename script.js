@@ -15,15 +15,15 @@ function sendToTelegram() {
         })
         .then(response => {
             if (response.ok) {
-                messageElement.textContent = 'File sent successfully!';
+                messageElement.textContent = 'File sent to Telegram Bot successfully!';
             } else {
-                messageElement.textContent = 'Error sending the file';
+                messageElement.textContent = 'Error sending the file to Telegram Bot';
             }
         })
         .catch(error => {
-            messageElement.textContent = 'Error sending the file';
+            messageElement.textContent = 'Error sending the file to Telegram Bot';
         });
     } else {
-        messageElement.textContent = 'Please select a file to send';
+        messageElement.textContent = 'Please select a file to send to Telegram Bot';
     }
 }
